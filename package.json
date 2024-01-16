@@ -1,7 +1,7 @@
 {
   "name": "personalsite",
   "version": "0.1.0",
-  "homepage": "https://wingingbump.github.io/personalsite/",
+  "homepage": "https://wingingbump.github.io",
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
