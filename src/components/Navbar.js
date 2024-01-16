@@ -24,9 +24,12 @@ function Navbar() {
         </button>
       </div>
       <div className="links">
-        <Link to="/"> Home </Link>
-        <Link to="/projects"> Projects </Link>
-        <Link to="/experience"> Experience </Link>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="https://drive.google.com/file/d/1vVabEqTrvh8VMUv8ds6N8UC2u1I2_cq3/view?usp=sharing" 
+          target="_blank" rel="noopener noreferrer">
+          Resume </a>
       </div>
     </div>
   );

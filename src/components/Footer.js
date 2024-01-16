@@ -7,8 +7,12 @@ function Footer() {
   return (
     <div className="footer">
       <div className="socialMedia">
-        <LinkedInIcon />
-        <GitHubIcon/>
+        <a href="https://www.linkedin.com/in/tommyle03" target="_blank" rel="noopener noreferrer">
+          <LinkedInIcon />
+        </a>
+        <a href="https://github.com/Wingingbump" target="_blank" rel="noopener noreferrer">
+          <GitHubIcon />
+        </a>
       </div>
       <p>Tommy Le</p>
     </div>

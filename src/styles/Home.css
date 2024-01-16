@@ -42,7 +42,11 @@
 .skills h1 {
     text-align: center;
     align-items: center;
+    border-bottom: 2px solid #CCCCCC;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
+
 
 .skills-grid {
     display: grid;
@@ -117,6 +121,9 @@
 .experience h1 {
     text-align: center;
     align-items: center;
+    border-bottom: 2px solid #CCCCCC;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {

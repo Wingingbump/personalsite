@@ -8,7 +8,6 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
-import ProjectIcon from "@material-ui/icons/Web";
 
 import ProjectItem from "../components/ProjectItem";
 import { ProjectList } from "../helpers/ProjectList.js";
@@ -52,7 +51,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="skills" ref={skillsRef}>
+      <div className="skills" id="skills" ref={skillsRef}>
         <h1>Skills</h1>
         <div className="skills-grid">
           <div className="skill-category">
@@ -85,7 +84,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="experience">
+      <div className="experience" id="experience">
         <h1>Experience</h1>
         <VerticalTimeline lineColor="#3e497a">
           <VerticalTimelineElement
@@ -137,14 +136,14 @@ function Home() {
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
+        <h1>Projects</h1>
       </div>
 
-      <div className="projects">
-        <h1> My Personal Projects</h1>
+      <div className="projects" id="projects">
         <div className="projectList">
           {ProjectList.map((project) => {
             return (
-              <ProjectItem id={project.link} name={project.name} image={project.image} />
+              <ProjectItem id={project.link} name={project.name} image={project.image} desc={project.desc} skills={project.skills} />
             );
           })}
         </div>
