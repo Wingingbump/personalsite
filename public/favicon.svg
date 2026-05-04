@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#3d8b8b"/>
+  <!-- hair top -->
+  <rect x="4" y="2" width="8" height="2" fill="#2a1a08"/>
+  <rect x="3" y="3" width="1" height="3" fill="#2a1a08"/>
+  <rect x="12" y="3" width="1" height="3" fill="#2a1a08"/>
+  <!-- face -->
+  <rect x="4" y="4" width="8" height="5" fill="#f5c090"/>
+  <!-- hair fringe over forehead -->
+  <rect x="4" y="4" width="2" height="1" fill="#2a1a08"/>
+  <rect x="10" y="4" width="2" height="1" fill="#2a1a08"/>
+  <!-- eyes -->
+  <rect x="5" y="6" width="1" height="1" fill="#1a1030"/>
+  <rect x="10" y="6" width="1" height="1" fill="#1a1030"/>
+  <!-- cheek blush -->
+  <rect x="4" y="7" width="1" height="1" fill="#e89070"/>
+  <rect x="11" y="7" width="1" height="1" fill="#e89070"/>
+  <!-- smile -->
+  <rect x="6" y="8" width="4" height="1" fill="#a04030"/>
+  <!-- neck -->
+  <rect x="6" y="9" width="4" height="1" fill="#e8b078"/>
+  <!-- shoulders / shirt -->
+  <rect x="3" y="10" width="10" height="1" fill="#4060a0"/>
+  <rect x="2" y="11" width="12" height="5" fill="#4060a0"/>
+  <!-- shirt collar accent -->
+  <rect x="6" y="10" width="1" height="1" fill="#f5c090"/>
+  <rect x="9" y="10" width="1" height="1" fill="#f5c090"/>
+</svg>
