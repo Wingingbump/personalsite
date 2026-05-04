@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --silver:      #c0c0c0;
+  --silver-dark: #808080;
+  --silver-mid:  #a8a8a8;
+  --white:       #ffffff;
+  --black:       #000000;
+
+  /* Chillwave pastel title bar colors */
+  --coral:       #d4614e;
+  --dusty-blue:  #4a7fa5;
+  --sage:        #5f9e6e;
+  --mauve:       #8e5e8e;
+
+  --bevel-up:    inset -1px -1px #000000, inset 1px 1px #ffffff,
+                 inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  --bevel-down:  inset 1px 1px #000000, inset -1px -1px #ffffff,
+                 inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+  --bevel-panel: inset -1px -1px #ffffff, inset 1px 1px #808080;
+}
+
+body {
+  overflow: hidden;
+  background-color: #3d8b8b;
+  background-image: radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px);
+  background-size: 4px 4px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: var(--black);
+  image-rendering: pixelated;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track { background: var(--silver); box-shadow: var(--bevel-panel); }
+::-webkit-scrollbar-thumb { background: var(--silver); box-shadow: var(--bevel-up); }
+::-webkit-scrollbar-button { background: var(--silver); box-shadow: var(--bevel-up); height: 16px; }
+
+@keyframes win-open {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.window-open {
+  animation: win-open 0.12s ease-out forwards;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+}

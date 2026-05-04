@@ -1,0 +1,265 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=0.7 cm,
+    bottom=0.7 cm,
+    left=1.2 cm,
+    right=1.2 cm,
+    footskip=0.5 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tommy Le's CV},
+    pdfauthor={Tommy Le},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.12 cm}{0.08 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.05 cm,
+        parsep=0.05 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.00001 cm}{0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{22 pt}{22 pt}\selectfont Thomas ``Tommy'' Le
+
+        \vspace{3 pt}
+
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:tommyl22@vt.edu}{tommyl22@vt.edu}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+1-571-305-0172}{571-305-0172}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/tommyle03}{LinkedIn: tommyle03}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/Wingingbump}{GitHub: Wingingbump}}%
+    \end{header}
+
+    \vspace{3 pt - 0.3 cm}
+
+
+    \section{Education}
+
+\begin{twocolentry}{
+            \textbf{GPA: 3.8/4.0}
+        }
+            \textbf{Virginia Polytechnic Institute and State University}, Master of Engineering in Computer Science
+        \end{twocolentry}
+        \vspace{0.1 cm}
+        \begin{twocolentry}{
+            \textbf{GPA: 3.6/4.0}
+        }
+            \textbf{Virginia Polytechnic Institute and State University}, Bachelor of Science in Computer Science
+        \end{twocolentry}
+
+    \section{Experience}
+
+        \begin{twocolentry}{
+            Sept 2025 -- Present
+        }
+            \textbf{Software Engineer}, Leidos\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Spearheaded legacy system modernization by migrating on-premises clusters to Microsoft Dynamics and Microsoft Fabric, eliminating infrastructure overhead and reducing hosting costs for federal customers
+                \item Architected document processing pipelines using Azure Data Factory and Azure AI Document Intelligence to automate extraction, transformation, and loading of unstructured data
+                \item Engineered end-to-end workflow automation and data pipeline solutions, streamlining federal contract delivery through AI-driven document processing in a CI/CD environment
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            May 2025 -- Sept 2025
+        }
+            \textbf{Software Engineering Intern}, Leidos\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Led end-to-end development of an internal AI-driven service for a federal team, delivering a production-ready tool that automated manual review processes
+                \item Engineered modernization solutions for legacy systems, improving performance and ensuring compliance with federal security and regulatory standards
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            May 2024 -- May 2025
+        }
+            \textbf{Business Development Systems Intern}, Leidos\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Analyzed 1,000,000+ business opportunities by building AI-powered metadata analytics pipelines, enabling data-driven decision-making for leadership
+                \item Developed a full-stack PowerApps proposal management system integrated with Dataverse and Azure APIs, delivering real-time Power BI dashboards for key business metrics
+                \item Automated data collection workflows from SharePoint using Bash scripting, extracting and transforming metadata to feed analytics and reporting systems
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            May 2023 -- May 2025
+        }
+            \textbf{Software Engineering Intern}, BMRA\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built cross-platform automation solutions integrating Office365, Adobe, and Zoom APIs, saving 20+ hours per week and reducing processing time by 60\%
+                \item Developed data retrieval and storage services using Microsoft Graph API and SQL Server, deploying custom applications on remote servers for organization-wide access
+            \end{highlights}
+        \end{onecolentry}
+
+
+    \section{Leadership}
+
+        \begin{twocolentry}{
+            Sept 2022 -- May 2025
+        }
+            \textbf{President \& Treasurer}, Asian American Student Union -- Virginia Tech\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Oversaw representation for 3,000+ Asian American students; managed \$30,000+ in funds for events with 500+ participants and grew budget by 80\% year over year
+            \end{highlights}
+        \end{onecolentry}
+
+
+    \section{Projects}
+
+        \begin{twocolentry}{
+            Jan 2025 -- Present
+        }
+            \textbf{Spendalyzer} -- React, TypeScript, FastAPI, PostgreSQL, Plaid API, Anthropic API, Voyage AI\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built and deployed a full-stack personal finance platform (\href{https://spend.wingingbump.com}{spend.wingingbump.com}) that aggregates transactions across banks via Plaid, with a FastAPI + PostgreSQL backend on Render and a React/Vite/Tailwind frontend on Vercel
+                \item Implemented AI-driven merchant normalization using Voyage embeddings and a Claude-powered financial advisor with streaming responses, goal tracking, and proactive nudges for category spikes and recurring charges
+                \item Designed a drag-and-drop dashboard canvas with Recharts (bar, line, pie, Sankey) and shipped core analytics including duplicate/transfer detection, recurring subscription detection, and month-over-month spending insights
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{twocolentry}{
+            Jul 2023
+        }
+            \textbf{BMRA Production App} -- C\#, XAML, COM Interop, Windows UI Library\end{twocolentry}
+
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a modern desktop application for remote distribution using Windows UI Library, introducing new features and optimizing performance
+            \end{highlights}
+        \end{onecolentry}
+
+
+    \section{Skills}
+
+        \begin{onecolentry}
+            \textbf{Languages:} C\#, Python, Java, SQL, Kotlin, JavaScript, TypeScript, React, HTML/CSS, Shell (Bash), C++, C, Assembly, LaTeX
+        \end{onecolentry}
+
+        \vspace{0.1 cm}
+
+        \begin{onecolentry}
+            \textbf{Technical:} Azure, Azure Data Factory, Azure AI Document Intelligence, Git, Unix, .NET, React JS, Node JS, FastAPI, PostgreSQL, Tailwind CSS, Android, Microsoft Dynamics, Microsoft Fabric, Power Automate, Power BI, SharePoint, Oracle CRM, Dataverse, Docker, AI/ML
+        \end{onecolentry}
+
+
+\end{document}
