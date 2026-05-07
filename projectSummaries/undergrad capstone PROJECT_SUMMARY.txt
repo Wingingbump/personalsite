@@ -1,0 +1,96 @@
+LOCKHEED MARTIN AUTODELIVERY TEAM - PROJECT SUMMARY
+=====================================================
+
+OVERVIEW
+--------
+Capstone project (Spring 2025) for Lockheed Martin's Autodelivery Team: an
+in-factory autonomous drone delivery system. Operators use a web-based "Mission
+Center" to dispatch drones that fly pre-defined paths to deliver parts between
+stations within a factory environment. The system manages a fleet of drones,
+tracks live telemetry, logs flight history, handles part-request workflows,
+and supports precision landing via fiducial markers.
+
+SYSTEM ARCHITECTURE
+-------------------
+Three-tier, fully containerized stack:
+
+1. Frontend (React + TypeScript "Mission Center" GUI)
+   - Operator dashboard for fleet management, mission planning, live drone
+     telemetry, path creation/editing, part-request workflow, drone history,
+     and issue tracking.
+   - Views: Login, DroneSelector, DroneDetails, DroneHistory, PathView,
+     IndividualDronePath, PartRequest, DropperView, Issues.
+
+2. Backend (Python Flask REST API)
+   - Routes for auth, drones, missions, paths, and issues.
+   - SQLAlchemy ORM over MySQL.
+   - Per-drone `drone_link.py` process bridges the API and each drone over
+     MAVLink/UDP, translating mission data into ArduPilot commands.
+
+3. Drone Onboard Software (Raspberry Pi companion computer)
+   - MAVProxy bridge between Pixhawk-class flight controller (USB) and the
+     Mission Center (Wi-Fi/UDP).
+   - Custom scripts for mission execution, telemetry, QR-code reading,
+     UWB positioning bridge, ArUco/AprilTag-based precision landing, payload
+     grabber control, and landing-zone detection (OpenCV).
+
+4. Database (MySQL)
+   - Schema + seed SQL auto-loaded on container init.
+   - phpMyAdmin included for inspection.
+
+5. Orchestration
+   - Single `docker-compose.yml` brings up frontend, backend, MySQL, and
+     phpMyAdmin together.
+
+TECHNOLOGIES
+------------
+Frontend:
+  - React 18, TypeScript, React Router
+  - Material UI (MUI) + Emotion
+  - AG Grid (data tables), Recharts (telemetry charts)
+
+Backend:
+  - Python 3.11, Flask, Flask-CORS, Flask-SQLAlchemy
+  - SQLAlchemy, PyMySQL / mysqlclient
+  - pymavlink (MAVLink protocol)
+  - aiohttp, requests
+
+Drone / Robotics:
+  - ArduPilot (Copter firmware), Mission Planner
+  - MAVLink, MAVProxy, pymavlink
+  - Raspberry Pi (Model B+), picamera2
+  - OpenCV (ArUco / AprilTag fiducial detection, camera calibration)
+  - GPS + external compass, UWB positioning, LiDAR/analog rangefinders
+  - Pixhawk-class flight controller
+
+Infrastructure:
+  - Docker, Docker Compose
+  - MySQL 8, phpMyAdmin
+  - Bash shell scripts + cron for drone-side service startup
+
+MY ROLE / KEY CONTRIBUTIONS
+---------------------------
+(Based on recent commit history)
+  - Implemented and refined the autonomous fly-to function with altitude-aware
+    behavior.
+  - Built the payload grabber control code and integrated AprilTag-based
+    targeting.
+  - Improved logging and onboard drone telemetry handling.
+
+PERSONAL-SITE BLURB (DRAFT)
+---------------------------
+Lockheed Martin Autonomous Drone Delivery (Capstone, Spring 2025)
+Built a full-stack system that lets factory operators dispatch a fleet of
+autonomous drones to deliver parts between stations. Designed a React +
+TypeScript "Mission Center" with live telemetry and path planning, a Flask
+REST API backed by MySQL, and Python companion-computer software running on
+Raspberry Pi that drives ArduPilot flight controllers over MAVLink. Worked on
+autonomous flight control, AprilTag-based precision landing, and a custom
+payload grabber. Stack: React, TypeScript, MUI, Flask, SQLAlchemy, MySQL,
+pymavlink, ArduPilot, OpenCV, Raspberry Pi, Docker.
+
+KEYWORDS / TAGS
+---------------
+Full-stack, Robotics, Autonomous Systems, UAV, Drones, Computer Vision,
+React, TypeScript, Python, Flask, MySQL, Docker, MAVLink, ArduPilot,
+Raspberry Pi, OpenCV, AprilTag/ArUco, Capstone, Lockheed Martin.

@@ -1,6 +1,6 @@
 import { LinkedInIcon, GitHubIcon, ContactIcon } from '../DesktopIcons'
 
-const LINKS = [
+export const LINKS = [
   { label: 'LinkedIn', value: 'linkedin.com/in/tommyle03',    href: 'https://linkedin.com/in/tommyle03',        Icon: LinkedInIcon, color: '#4a7fa5' },
   { label: 'GitHub',   value: 'github.com/Wingingbump',       href: 'https://github.com/Wingingbump',           Icon: GitHubIcon,   color: '#1a1a1a' },
   { label: 'Email',    value: 'rocketmanlee1@gmail.com',      href: 'mailto:rocketmanlee1@gmail.com',           Icon: ContactIcon,  color: '#d4614e' },

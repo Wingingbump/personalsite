@@ -1,4 +1,4 @@
-const PROJECTS = [
+export const PROJECTS = [
   {
     name: 'Spendalyzer',
     desc: 'Full-stack personal finance platform at spend.wingingbump.com — Plaid aggregation, Voyage embeddings for merchant normalization, and a Claude-powered advisor with streaming responses, goal tracking, and proactive nudges. Drag-and-drop dashboard with Recharts (bar/line/pie/Sankey), duplicate/transfer detection, and recurring subscription detection.',

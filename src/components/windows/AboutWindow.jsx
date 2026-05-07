@@ -1,4 +1,4 @@
-const SKILLS = [
+export const SKILLS = [
   'C#', 'Python', 'Java', 'TypeScript', 'JavaScript', 'React', 'FastAPI',
   'PostgreSQL', 'Azure', 'Docker', '.NET', 'SQL', 'Kotlin', 'C++', 'Bash',
 ]

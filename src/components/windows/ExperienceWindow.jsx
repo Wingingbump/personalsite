@@ -1,4 +1,4 @@
-const TIMELINE = [
+export const TIMELINE = [
   {
     role: 'Software Engineer',
     org: 'Leidos',

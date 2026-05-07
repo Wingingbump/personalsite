@@ -38,6 +38,10 @@ body {
   color: var(--black);
 }
 
+@media (max-width: 720px) {
+  body { overflow: auto; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 16px; }
 ::-webkit-scrollbar-track { background: var(--silver); box-shadow: var(--bevel-panel); }

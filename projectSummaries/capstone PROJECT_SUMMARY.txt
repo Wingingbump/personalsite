@@ -1,0 +1,92 @@
+Got Food? — Project Summary
+============================
+
+Overview
+--------
+Got Food? is a full-stack web application built as an MEng Capstone project to help
+Virginia residents locate food pantries near them. The platform aggregates pantry
+location data, hours of operation, eligibility requirements, and supported dietary
+options into an interactive map-based interface, making food assistance resources
+easier to discover and verify.
+
+Users can search and filter pantries by ZIP code, city, dietary support (Halal,
+Vegan, Vegetarian, Kosher), eligibility, and current open status. The application
+also includes an authenticated admin interface for managing pantry records, plus
+user accounts for personalization features.
+
+Architecture
+------------
+A containerized, multi-service application orchestrated with Docker Compose:
+
+  - Frontend (React SPA)
+  - Backend (Flask REST API)
+  - PostgreSQL database (custom-built image with seed data and constraints)
+  - Redis cache layer
+  - Mobile workspace (planned/in-progress)
+
+All services are independently Dockerized and connected through a shared compose
+network for local development and production deployment.
+
+Technology Stack
+----------------
+Frontend
+  - React 19
+  - Vite 7 (build tool / dev server)
+  - React Router DOM 7
+  - React Leaflet + Leaflet (interactive maps)
+  - Font Awesome + react-icons
+  - ESLint 9 (with React Hooks and React Refresh plugins)
+
+Backend
+  - Python / Flask
+  - Flask-SQLAlchemy (ORM)
+  - Flask-JWT-Extended (authentication / admin authorization)
+  - Flask-Caching backed by Redis (response memoization)
+  - Flask-CORS, Flask-Talisman (security headers / CORS policy)
+  - Gunicorn (production WSGI server)
+  - psycopg2 (PostgreSQL driver)
+
+Database
+  - PostgreSQL with custom schema, enums, constraints, and check functions
+  - Domain enums: weekday, hourly_range_status, supported_diet
+  - Data-integrity constraints including ZIP-code format validation,
+    Virginia-bounding-box coordinate checks, and uniqueness rules using
+    NULLS NOT DISTINCT
+
+Caching
+  - Redis (alpine) for query memoization with configurable TTL
+
+Infrastructure / DevOps
+  - Docker + Docker Compose (development and production compose files)
+  - Separate Dockerfiles for dev, prod, and test environments
+  - Healthchecks on the database service
+  - Test harness via docker-compose.test.yml and run-tests.sh
+
+Key Features
+------------
+  - Interactive Leaflet map of Virginia food pantries
+  - Filtering by ZIP, city, dietary support, eligibility, "open now", and
+    visibility of pantries with unknown/variable hours
+  - Pantry detail modals with hours, contact info, and comments
+  - JWT-based authentication with role-gated admin endpoints
+  - Admin UI for creating/editing pantry records
+  - Redis-backed response caching for fast repeated queries
+  - Robust schema-level validation to keep crowdsourced data trustworthy
+
+My Role / Highlights
+--------------------
+  - Contributed to the full stack: React frontend, Flask API, PostgreSQL schema
+    design, and containerization
+  - Implemented the admin edit API and admin feature workflow
+  - Iterated on the map menu UX based on user feedback
+  - Designed schema constraints (geographic bounds, ZIP validation,
+    NULLS NOT DISTINCT uniqueness) to enforce data quality at the DB layer
+
+Repository Layout
+-----------------
+  frontend/   — React + Vite SPA
+  backend/    — Flask API, models, auth, cache layer, tests
+  database/   — Postgres Dockerfile, init scripts, schema
+  cache/      — Redis Dockerfile
+  mobile/     — Mobile workspace
+  docker-compose.yml / docker-compose.test.yml
