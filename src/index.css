@@ -36,7 +36,6 @@ body {
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
   color: var(--black);
-  image-rendering: pixelated;
 }
 
 /* Scrollbar */

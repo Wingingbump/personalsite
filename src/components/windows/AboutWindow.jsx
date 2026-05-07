@@ -43,14 +43,27 @@ export default function AboutWindow() {
       {/* Name header */}
       <div style={{
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         gap: 12,
         marginBottom: 18,
         paddingBottom: 14,
         borderBottom: '1px solid #c0c0c0',
       }}>
-        <span style={{ fontSize: 36 }}>👤</span>
-        <div>
+        <img
+          src="/headshot.jpg"
+          alt="Tommy Le"
+          style={{
+            width: '100%',
+            maxWidth: 280,
+            aspectRatio: '1 / 1',
+            objectFit: 'cover',
+            imageRendering: 'auto',
+            boxShadow: 'inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf',
+            border: '1px solid #000',
+          }}
+        />
+        <div style={{ textAlign: 'center' }}>
           <div style={{ fontSize: 12, color: '#d4614e', marginBottom: 6, letterSpacing: 2 }}>Tommy Le</div>
           <div style={{ fontSize: 7, color: '#555' }}>Software Engineer @ Leidos · VT M.Eng. '26</div>
         </div>
@@ -60,9 +73,8 @@ export default function AboutWindow() {
         <p style={{ fontSize: 7, color: '#333', lineHeight: 2.2 }}>
           Software engineer at Leidos working on legacy modernization, document
           processing pipelines on Azure, and AI-driven automation for federal
-          customers. Graduating with my M.Eng. in CS from Virginia Tech and
-          building Spendalyzer — a personal finance platform with a Claude-powered
-          financial advisor — on the side.
+          customers. Graduating with my M.Eng. in CS from Virginia Tech, with a
+          focus on full-stack systems, machine learning, and applied AI.
         </p>
       </Section>
 
@@ -84,7 +96,7 @@ export default function AboutWindow() {
 
       <Section title="// Interests">
         <p style={{ fontSize: 7, color: '#333', lineHeight: 2.2 }}>
-          🎣 Fishing &nbsp; 🎮 Game dev &nbsp; 🌲 The outdoors &nbsp; ✨ Creative coding
+          🎣 Fishing &nbsp; 🎮 Gaming &nbsp; 🌲 Outdoors &nbsp; 🎬 Movies
         </p>
       </Section>
     </div>

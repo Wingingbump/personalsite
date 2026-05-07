@@ -6,22 +6,34 @@ const PROJECTS = [
     color: '#d4614e',
   },
   {
+    name: 'Got Food? — MEng Capstone',
+    desc: 'Map-based platform helping Virginia residents locate food pantries with filtering by ZIP, dietary support (Halal/Vegan/Vegetarian/Kosher), eligibility, and current open status. React + Vite SPA with React Leaflet maps, Flask REST API with JWT-gated admin endpoints, a custom PostgreSQL schema enforcing geographic-bounding and ZIP-code constraints, and Redis-backed response caching — all containerized with Docker Compose.',
+    tags: ['React', 'Vite', 'Flask', 'PostgreSQL', 'Redis', 'Leaflet', 'Docker'],
+    color: '#5f9e6e',
+  },
+  {
+    name: 'Lockheed Martin Autodelivery — Undergrad Capstone',
+    desc: 'Factory autonomous drone delivery system for Lockheed Martin (Spring 2025). Built a React + TypeScript "Mission Center" for fleet management and live telemetry, a Flask REST API bridging MAVLink to ArduPilot, and Raspberry Pi companion-computer software for autonomous flight, AprilTag-based precision landing, and payload grabber control.',
+    tags: ['React', 'TypeScript', 'Flask', 'MySQL', 'MAVLink', 'ArduPilot', 'OpenCV', 'Raspberry Pi'],
+    color: '#4a7fa5',
+  },
+  {
     name: 'wingingbump.com',
     desc: 'This site — an interactive retro-OS portfolio built on Vite + React with a draggable window system, pixel-art chrome, and a fishing/lake theme.',
     tags: ['React', 'Vite', 'Three.js'],
-    color: '#4a7fa5',
+    color: '#8e5e8e',
   },
   {
     name: 'BMRA Production App',
     desc: 'Modern Windows desktop application for remote distribution, built on the Windows UI Library with COM interop. Shipped new features and performance improvements for daily production use.',
     tags: ['C#', 'XAML', 'WinUI', 'COM Interop'],
-    color: '#5f9e6e',
+    color: '#d4614e',
   },
   {
     name: 'Quoteth Bot',
     desc: 'Interactive Discord game bot with SQLite persistence.',
     tags: ['Python', 'SQLite'],
-    color: '#8e5e8e',
+    color: '#5f9e6e',
   },
 ]
 
